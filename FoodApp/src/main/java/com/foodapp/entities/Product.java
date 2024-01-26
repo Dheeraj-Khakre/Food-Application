@@ -18,6 +18,9 @@ public class Product {
 public String toString() {
 	return "Product [id=" + id + ", name=" + name + ", type=" + type + ", cost=" + cost + "]";
 }
+public void setId(int id) {
+	this.id = id;
+}
 public Product() {
 	super();
 	// TODO Auto-generated constructor stub

@@ -57,7 +57,7 @@ public class ProductDao {
 
 	}
 
-	public Product view(int id) {
+	public Product viewProductById(int id) {
 	return	(emf.createEntityManager()).find(Product.class,id);
 		
 		

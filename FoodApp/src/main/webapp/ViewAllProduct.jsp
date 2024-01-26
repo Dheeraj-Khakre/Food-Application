@@ -38,6 +38,8 @@
       <th scope="col">Product Type</th>
       <th scope="col">Cost Of Product</th>
        <th scope="col">Quantity</th>
+        <th scope="col">Update</th>
+         <th scope="col">Delete</th>
       
     </tr>
   </thead>
@@ -55,6 +57,9 @@
       <td><%=p.getType() %></td>
       <td><%=p.getCost() %></td>
       <td><%=p.getQty() %></td>
+       <td><a href="editproduct?id=<%= p.getId() %>" class="btn btn-primary">Update Product</a></td>
+       <td><a href="deleteproduct?id=<%=p.getId() %>" class="btn btn-primary">Delete </a></td>
+      
     </tr>
     <%} %>
   </tbody>

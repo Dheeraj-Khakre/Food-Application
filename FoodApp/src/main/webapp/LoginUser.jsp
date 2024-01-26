@@ -50,7 +50,8 @@
 		</div>
 	</nav>
 
-	<form action="loginadmin">
+<Div class ="container m-4 p-4">
+	<form action="loginuser">
 
 
 
@@ -80,9 +81,9 @@
 				id="exampleInputEmail1" />
 		</div>
 
-		<button type="submit" class="btn btn-primary">Submit</button>
+		<button type="submit" class="btn btn-primary">Login</button>
 	</form>
-
+</Div>
 
 
 </body>

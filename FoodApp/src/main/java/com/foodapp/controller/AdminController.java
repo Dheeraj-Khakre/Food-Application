@@ -26,7 +26,7 @@ public class AdminController {
 	public ModelAndView saveAdmin(@ModelAttribute("admin") Admin admin) {
 		adminDao.saveAdmin(admin);
 		ModelAndView mav = new ModelAndView("LoginPage");
-		mav.addObject("mas", null);
+
 		return mav;
 
 	}
@@ -40,7 +40,7 @@ public class AdminController {
 			return mav;
 		} else {
 			ModelAndView mav = new ModelAndView("AdminHomePage");
-
+			mav.addObject("mas", null);
 			return mav;
 
 		}
