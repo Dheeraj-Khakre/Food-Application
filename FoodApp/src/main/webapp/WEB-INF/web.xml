@@ -4,6 +4,8 @@
 
 <web-app>
   <welcome-file-list>
+   <welcome-file>HomePage.jsp
+     </welcome-file>
        <welcome-file>AddAdmin.jsp
      </welcome-file>
      <welcome-file>index.jsp

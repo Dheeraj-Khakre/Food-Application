@@ -1,4 +1,3 @@
-<%@page import="com.foodapp.entities.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src='https://kit.fontawesome.com/a076d05399.js'
 	crossorigin='anonymous'></script>
-<!-- <link rel="stylesheet" href="Stylesheet.css"> -->
  <%@ include file="All_CSS_Script.jsp"%> 
 
 
@@ -32,15 +30,24 @@
 			</div>
 			<ul class="hblock2">
 				<li class="hitem"><a href="">Search</a></li>
-				 
+				<li class="hitem">
+
+					<form class="d-flex" action="LoginUser.jsp">
+						<button class="btn btn-outline-success text-dark" type="submit">Login
+						</button>
+					</form>
+
+				</li>
+				<li class="hitem">
+					<form class="d-flex " action="signinuser">
+						<button class="btn btn-outline-success text-dark" type="submit">Sign
+							in</button>
+					</form>
+				</li>
 
 				<li class="hitem"><a href="">Offers</a></li>
 				<li class="hitem"><a href="">Help</a></li>
 				<li class="hitem"><a href="">Cart</a></li>
-			
-				<li class="hitem"><a  href="userinfo?id=<%= ((User)request.getAttribute("user")).getId() %>"> <%= ((User)request.getAttribute("user")).getName() %></a></li>
-				
-				
 			</ul>
 		</div>
 	</header>
