@@ -1,5 +1,7 @@
 package com.foodapp.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -42,16 +44,16 @@ public class UserController {
 	}
 
 	@RequestMapping("/loginuser")
-	public ModelAndView loginadmin(@RequestParam("email") String email, @RequestParam("password") String password) {
+	public ModelAndView loginadmin(@RequestParam("email") String email, @RequestParam("password") String password,HttpSession session) {
 		User user = userDao.login(email, password);
 		if (user == null) {
 			ModelAndView mav = new ModelAndView("LoginUser");
-			mav.addObject("mas", "login eamil and Password are wronge");
+			mav.addObject("mas", "login eamil and Password are Invilid");
 			return mav;
 		} else {
 			ModelAndView mav = new ModelAndView("UserHomePage");
 			//mav.addObject("mas", null);
-			
+			 session.setAttribute("user", user);
 			mav.addObject("user", user);
 			
 			return mav;

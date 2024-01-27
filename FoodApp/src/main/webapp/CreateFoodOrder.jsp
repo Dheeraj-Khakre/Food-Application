@@ -1,23 +1,16 @@
 <%@page import="com.foodapp.entities.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src='https://kit.fontawesome.com/a076d05399.js'
-	crossorigin='anonymous'></script>
-<!-- <link rel="stylesheet" href="Stylesheet.css"> -->
+<title>Create Food Order</title>
  <%@ include file="All_CSS_Script.jsp"%> 
-
-
-<title>Own Restaurant</title>
-
 </head>
-
 <body>
-	    <header>
+    <header>
 		<div class="hblock">
 			<div class="hblock1">
 				<a class="logo" href=""><img
@@ -47,79 +40,23 @@
 		</div>
 	</header>
 
-	<div class="main">
-		<div id="top">
-			<div id="overlay">
-				<div id="highlight">
-					<h1>Own Restaurant</h1>
-					<div id="down">
-						<b><h4>Taste the World</h4>
-							<h5>Food is not just fuel.....it's an experience</h5></b>
-					</div>
 
-				</div>
-			</div>
-		</div>
-		<div id="heading">Best Offers for you</div>
-		<div id="bottom">
+     <form:form  action="savefoodorder" modelAttribute="foodOrder">
+      <div class="mb-3">
+    <label for="name" class="form-label">Enter Name </label>
+    <form:input path="name" class="form-control" id="name"/>
+    </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Enter Mobile Number</label>
+    <form:input path="mobileNo" class="form-control" id="exampleInputEmail1"/>
+    </div>
+ 
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
+ </form:form>
 
-			<div class="b" id="b1"></div>
-			<div class="b" id="b2"></div>
-			<div class="b" id="b3"></div>
-			<div class="b" id="b4"></div>
-		</div>
-		
-		 <%--   <div class="order">
-		         
-		          <form action="" method="post">
-		               <input type="hidden" value="<%= ((User)request.getAttribute("user")).getId() %>" name="id">
-		                  <input id="order" type="submit" value="Order Food">
-		          
-		          </form>
-		         
-		   </div> --%>
-		    
-		     
-		
-	</div>
-	<div class="main2">
-		<div class="mitem">
-			<a href=""><img src="https://source.unsplash.com/400x400/?Burger"
-				alt=""></a>
 
-		</div>
-		<div class="mitem">
-			<a href=""><img
-				src="https://source.unsplash.com/400x400/?biryani food" alt=""></a>
 
-		</div>
-		<div class="mitem">
-			<a href=""><img src="https://source.unsplash.com/400x400/?samosa"
-				alt=""></a>
-
-		</div>
-		<div class="mitem">
-			<a href=""><img
-				src="https://source.unsplash.com/400x400/?pizza food" alt=""></a>
-
-		</div>
-		<div class="mitem">
-			<a href=""><img
-				src="https://source.unsplash.com/400x400/?shawarma food" alt=""></a>
-
-		</div>
-		<div class="mitem">
-			<a href=""><img
-				src="https://source.unsplash.com/400x400/?chinies food" alt=""></a>
-
-		</div>
-		<div class="mitem">
-			<a href=""><img
-				src="https://source.unsplash.com/400x400/?panir tikka food" alt=""></a>
-
-		</div>
-
-	</div>
 
 
 
@@ -191,6 +128,6 @@
 	</footer>
 
 
-</body>
 
+</body>
 </html>

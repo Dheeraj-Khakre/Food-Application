@@ -2,6 +2,7 @@ package com.foodapp.entities;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,7 +27,7 @@ public class FoodOrder {
 	private double totalBill;
 	@ManyToOne
 	private User user;
-	@OneToMany(mappedBy = "foodOrder")
+	@OneToMany(mappedBy = "foodOrder",cascade =CascadeType.ALL )
 	private List<Item> items;
 	@Override
 	public String toString() {

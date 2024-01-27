@@ -22,8 +22,8 @@
     <input class="form-control"  type="hidden" value =<%=p.getId() %> id="id" name="id"/>
     </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Enter Type of Product</label>
-    <input  class="form-control" value =<%=p.getType() %> id="exampleInputEmail1" name="type"/>
+   
+    <input  class="form-control" value ="<%=p.getType() %> " id="exampleInputEmail1" name="type"/>
     </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Cost of Product</label>
