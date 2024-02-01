@@ -15,7 +15,9 @@ import com.foodapp.dao.FoodOrderDao;
 import com.foodapp.dao.ProductDao;
 import com.foodapp.dao.UserDao;
 import com.foodapp.entities.FoodOrder;
+import com.foodapp.entities.Item;
 import com.foodapp.entities.Product;
+import com.foodapp.entities.User;
 
 import net.sf.ehcache.search.parser.MOrderBy;
 
@@ -28,6 +30,7 @@ public class FoodOrderController {
 	UserDao userDao;
 	@Autowired
 	ProductDao productDao;
+	double totalBill = 0;
 
 	@RequestMapping("/viewallfoodorder")
 	public ModelAndView viewAllFoodOrder() {
@@ -47,6 +50,8 @@ public class FoodOrderController {
 	}
 	@RequestMapping("/savefoodorder")
 	public ModelAndView saveFoodOrder(@ModelAttribute("foodorder")FoodOrder order,HttpSession session) {
+		 order.setUser((User) session.getAttribute("user"));
+		 foodOrderDao.saveFoodOrder(order);
 		session.setAttribute("userfoodorder", order);
 		ModelAndView mav = new ModelAndView("UserViewAllProduct");
 		List<Product> products = productDao.viewAllProduct();
@@ -55,4 +60,20 @@ public class FoodOrderController {
 		return mav;
 	}
 
+	
+	
+	@RequestMapping("/submitfoodorder")
+	public ModelAndView submitFoodOrder(HttpSession session) {
+		FoodOrder order = (FoodOrder)session.getAttribute("userfoodorder");
+		@SuppressWarnings("unchecked")
+		List<Item> items= (List<Item>) session.getAttribute("itemList");
+		order.setItems(items);
+		
+		items.stream().forEach(i->{
+			 totalBill+=i.getCost();
+		});
+		order.setTotalBill(totalBill);
+		
+		return new ModelAndView();
+	}
 }

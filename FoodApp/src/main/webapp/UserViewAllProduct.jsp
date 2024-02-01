@@ -86,7 +86,7 @@
 				<td><%=p.getType()%></td>
 				<td><%=p.getCost()%></td>
 
-				<td><a href="#?id=<%=p.getId()%>" class="btn btn-primary">Add
+				<td><a href="additem?id=<%=p.getId()%>" class="btn btn-primary">Add
 						Food</a></td>
 
 
@@ -96,6 +96,12 @@
 			%>
 		</tbody>
 	</table>
+	   <form class="d-flex" action="submitfoodorder">
+				
+				<button class="btn btn-outline-success text-white bg-success"
+					type="submit">Submit</button>
+			</form>
+	
 </div>
 
 	<div class="bpart">

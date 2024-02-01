@@ -15,6 +15,16 @@ public class Item {
 	private String name;
 	private double cost;
 	private int quentity;
+	private String type;
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	@ManyToOne(cascade = CascadeType.ALL)
 	private FoodOrder foodOrder;
 	@Override
